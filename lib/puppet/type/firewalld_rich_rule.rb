@@ -176,4 +176,8 @@ Puppet::Type.newtype(:firewalld_rich_rule) do
   autorequire(:service) do
     ['firewalld']
   end
+
+  autorequire(:firewalld_custom_service) do
+    self[:service]
+  end
 end
